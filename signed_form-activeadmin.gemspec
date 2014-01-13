@@ -22,13 +22,13 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = %w(README.md)
 
   s.add_development_dependency 'rake'
-  s.add_development_dependency 'activemodel', '>= 3.1'
-  s.add_development_dependency 'actionpack', '>= 3.1'
-  s.add_development_dependency 'strong_parameters'
   s.add_development_dependency 'minitest'
 
-  s.add_dependency 'signed_form'
-  s.add_dependency 'railties'
+  s.add_development_dependency 'strong_parameters'
+  s.add_development_dependency 'sass-rails'
+  s.add_development_dependency 'sqlite3'
 
-  s.add_runtime_dependency 'activeadmin', '>= 0.4.0'
+  s.add_dependency 'rails', '>= 3.1'
+  s.add_dependency 'signed_form'
+  s.add_dependency 'activeadmin', '>= 0.4.0'
 end

@@ -1,5 +1,19 @@
-require 'active_model'
-require 'action_controller'
+require 'rails/all'
+require 'signed_form'
+require 'active_admin'
+require 'signed_form-activeadmin'
+
+module Test
+  class Application < ::Rails::Application
+    config.root = File.join __FILE__, '..'
+    config.logger = Logger.new STDOUT
+    config.active_support.deprecation = :stderr
+  end
+end
+
+class ApplicationController < ActionController::Base; end
+
+Test::Application.initialize!
 
 class User
   extend ActiveModel::Naming
@@ -11,30 +25,14 @@ class User
   end
 end
 
-require 'signed_form'
-
-# We currently fake AA since actually using it requires a complete Rails application to be set up
-
-module ActiveAdmin
-  class BaseController < ActionController::Base; end
-
-  module ViewHelpers
-    module FormHelper
-      include SignedForm::ActionView::FormHelper
-
-      alias_method :active_admin_form_for, :form_for
-    end
-  end
-end
-
-require 'signed_form-activeadmin'
-
 require 'minitest/autorun'
 
 describe ActiveAdmin::ViewHelpers::FormHelper do
   describe 'active_admin_form_for tag' do
     include ActionView::Helpers
     include ActionView::Context if defined? ActionView::Context
+    include SignedForm::ActionView::FormHelper
+    include Formtastic::Helpers::FormHelper
     include ActiveAdmin::ViewHelpers::FormHelper
 
     def polymorphic_path(*)
