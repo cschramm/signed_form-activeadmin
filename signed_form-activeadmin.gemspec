@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'minitest'
 
   s.add_dependency 'signed_form'
+  s.add_dependency 'railties'
 
   s.add_runtime_dependency 'activeadmin', '>= 0.4.0'
 end
