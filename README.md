@@ -1,6 +1,7 @@
 [![Gem Version](https://badge.fury.io/rb/signed_form-activeadmin.png)](http://badge.fury.io/rb/signed_form-activeadmin)
 [![Dependency Status](https://gemnasium.com/cschramm/signed_form-activeadmin.png)](https://gemnasium.com/cschramm/signed_form-activeadmin)
 [![Code Climate](https://codeclimate.com/github/cschramm/signed_form-activeadmin.png)](https://codeclimate.com/github/cschramm/signed_form-activeadmin)
+[![Build Status](https://travis-ci.org/cschramm/signed_form-activeadmin.png?branch=travis)](https://travis-ci.org/cschramm/signed_form-activeadmin)
 
 # SignedForm / Active Admin
 
