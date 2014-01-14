@@ -9,11 +9,11 @@ module SignedForm
 
           module ViewHelpers
             module FormHelper
-              alias_method :orig_active_admin_form_for, :active_admin_form_for
+              orig_active_admin_form_for = instance_method :active_admin_form_for
 
               define_method :active_admin_form_for do |resource, options = {}, &block|
                 options[:signed] = true
-                orig_active_admin_form_for resource, options, &block
+                orig_active_admin_form_for.bind(self).call resource, options, &block
               end
             end
           end
