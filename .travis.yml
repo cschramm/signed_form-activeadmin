@@ -11,7 +11,9 @@ rvm:
   - rbx
 
 env:
-  - RAILS_VERSION=3-1-stable
-  - RAILS_VERSION=3-2-stable
-  - RAILS_VERSION=4-0-stable
-  - RAILS_VERSION=master
+  - RAILS_VERSION=3-1-stable AA_VERSION=0-6-stable
+  - RAILS_VERSION=3-1-stable AA_VERSION=master
+  - RAILS_VERSION=3-2-stable AA_VERSION=0-6-stable
+  - RAILS_VERSION=3-2-stable AA_VERSION=master
+  - RAILS_VERSION=4-0-stable AA_VERSION=master
+  - RAILS_VERSION=master AA_VERSION=master

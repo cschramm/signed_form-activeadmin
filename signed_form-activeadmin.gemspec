@@ -29,5 +29,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '>= 3.1'
   s.add_dependency 'signed_form'
-  s.add_dependency 'activeadmin', '>= 0.4.0'
+  s.add_dependency 'activeadmin', '>= 0.6'
 end
