@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake'
   s.add_development_dependency 'minitest'
 
-  s.add_development_dependency 'strong_parameters'
   s.add_development_dependency 'sass-rails'
   s.add_development_dependency 'sqlite3'
 

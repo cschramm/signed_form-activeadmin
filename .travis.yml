@@ -1,0 +1,17 @@
+script: bundle exec ruby spec/spec.rb
+language: ruby
+
+rvm:
+  - 1.9.2
+  - 1.9.3
+  - 2.0.0
+  - 2.1.0
+  - ruby-head
+  - jruby-19mode
+  - rbx
+
+env:
+  - RAILS_VERSION=3-1-stable
+  - RAILS_VERSION=3-2-stable
+  - RAILS_VERSION=4-0-stable
+  - RAILS_VERSION=master
