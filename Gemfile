@@ -27,6 +27,7 @@ case aa_version
     gem 'activeadmin', github: 'gregbell/active_admin'
   when /0-6-stable/
     gem 'activeadmin', github: 'gregbell/active_admin', branch: '0-6-stable'
+    gem 'sass-rails'
   else
     gem 'activeadmin', ENV['AA_VERSION']
 end

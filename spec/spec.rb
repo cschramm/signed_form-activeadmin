@@ -8,6 +8,7 @@ module Test
     config.root = File.join __FILE__, '..'
     config.logger = Logger.new STDOUT
     config.active_support.deprecation = :stderr
+    config.assets.enabled = true
   end
 end
 
