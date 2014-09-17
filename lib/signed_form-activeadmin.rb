@@ -1,7 +1,7 @@
 module SignedForm
   module ActiveAdmin
     class Railtie < ::Rails::Railtie
-      initializer 'signed_form-activeadmin' do |_|
+      initializer 'signed_form-activeadmin', after: :prepend_helpers_path do |_|
         module ::ActiveAdmin
           class BaseController
             include SignedForm::ActionController::PermitSignedParams

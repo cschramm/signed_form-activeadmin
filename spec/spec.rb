@@ -12,8 +12,6 @@ module Test
   end
 end
 
-class ApplicationController < ActionController::Base; end
-
 Test::Application.initialize!
 
 class User
@@ -65,5 +63,9 @@ end
 describe ActiveAdmin::BaseController do
   it 'should include SignedForm::ActionController::PermitSignedParams' do
     ActiveAdmin::BaseController.included_modules.must_include SignedForm::ActionController::PermitSignedParams
+  end
+
+  it 'must include app helpers' do
+    ActiveAdmin::BaseController._helpers.included_modules.must_include TestHelper
   end
 end
