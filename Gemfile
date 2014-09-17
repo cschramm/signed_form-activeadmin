@@ -7,6 +7,8 @@ rails_version = ENV['RAILS_VERSION'] || 'master'
 case rails_version
   when /master/
     gem 'rails', github: 'rails/rails'
+  when /4-1-stable/
+    gem 'rails', github: 'rails/rails', branch: '4-1-stable'
   when /4-0-stable/
     gem 'rails', github: 'rails/rails', branch: '4-0-stable'
   when /3-2-stable/
