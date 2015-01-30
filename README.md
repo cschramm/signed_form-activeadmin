@@ -17,13 +17,7 @@ Active Admin forms in the generated Active Admin controllers.
 
 ## Caveat
 
-Formtastic uses the `check_box_tag` helper and not `check_box` for boolean fields, so they are not caught by SignedForm. You need to explicitly call `add_signed_fields` to get them signed and permitted.
-
-````ruby
-form do |f|
-  f.inputs do
-    f.input :active
-    f.add_signed_fields :active
-  end
-end
-````
+Formtastic uses the `check_box_tag` helper and not `check_box` for boolean fields, so they are not caught by SignedForm.
+This gem will thus sign every formtastic boolean input if SignedForm is used in the containing form and does not limit
+this to Active Admin. If you use formtastic to add boolean fields to signed forms, you probably *want* them to be signed
+as other types are automatically, so this should not be an issue.

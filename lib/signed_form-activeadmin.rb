@@ -18,6 +18,19 @@ module SignedForm
             end
           end
         end
+
+        module ::Formtastic
+          module Inputs
+            class BooleanInput
+              orig_check_box_html = instance_method :check_box_html
+
+              define_method :check_box_html do
+                builder.try :add_signed_fields, method
+                orig_check_box_html.bind(self).call
+              end
+            end
+          end
+        end
       end
     end
   end
