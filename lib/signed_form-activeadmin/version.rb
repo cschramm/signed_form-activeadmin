@@ -2,8 +2,8 @@ module SignedForm
   module ActiveAdmin
     class Version
       MAJOR = 0
-      MINOR = 1
-      PATCH = 3
+      MINOR = 3
+      PATCH = 0
 
       def self.to_s
         "#{MAJOR}.#{MINOR}.#{PATCH}"
