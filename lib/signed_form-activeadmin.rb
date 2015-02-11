@@ -7,13 +7,26 @@ module SignedForm
             include SignedForm::ActionController::PermitSignedParams
           end
 
-          module ViewHelpers
-            module FormHelper
-              orig_active_admin_form_for = instance_method :active_admin_form_for
+          if defined? Views::ActiveAdminForm
+            module Views
+              class ActiveAdminForm
+                alias_method :orig_build, :build
 
-              define_method :active_admin_form_for do |resource, options = {}, &block|
-                options[:signed] = true
-                orig_active_admin_form_for.bind(self).call resource, options, &block
+                define_method :build do |resource, options = {}, &block|
+                  options[:signed] = true
+                  orig_build resource, options, &block
+                end
+              end
+            end
+          else
+            module ViewHelpers
+              module FormHelper
+                orig_active_admin_form_for = instance_method :active_admin_form_for
+
+                define_method :active_admin_form_for do |resource, options = {}, &block|
+                  options[:signed] = true
+                  orig_active_admin_form_for.bind(self).call resource, options, &block
+                end
               end
             end
           end
