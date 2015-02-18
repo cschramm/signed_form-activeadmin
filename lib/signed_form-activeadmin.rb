@@ -15,6 +15,8 @@ module SignedForm
                 define_method :build do |resource, options = {}, &block|
                   options[:signed] = true
                   orig_build resource, options, &block
+                  @opening_tag.gsub! /<input type="hidden" name="form_signature" value=".+" \/>\n/,
+                                     form_builder.form_signature_tag
                 end
               end
             end
